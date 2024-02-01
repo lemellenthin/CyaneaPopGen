@@ -1,0 +1,10 @@
+*.sam
+*.bam
+*.bcf
+*.vcf
+*.fastq
+*.fastq.gz
+*.log
+*.bcf.csi
+*.zip
+*.vcf.gz
