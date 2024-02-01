@@ -1,0 +1,3 @@
+AureliaLEM1529  ChrysaoraLM138  ChrysaoraLMD429  CyaneaCapillataLEM1  CyaneaCapillataLEM2  CyaneaCapillataLEM6  CyaneaCapillataLM137  CyaneaFulvaLMD324  CyaneaFulvaLMD524
+
+each with SAMPLE/SAMPLE_R1.fastq.gz and SAMPLE/SAMPLE_R2.fastq.gz
