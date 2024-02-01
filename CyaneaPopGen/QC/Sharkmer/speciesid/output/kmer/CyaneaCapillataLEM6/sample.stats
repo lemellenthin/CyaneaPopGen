@@ -1,0 +1,9 @@
+arguments	Args { k: 21, histo_max: 10000, n: 100, max_reads: 0, threads: 1, sample: "sample", outdir: "output/CyaneaCapillataLEM6", input: Some(["data/CyaneaCapillataLEM6R1.1M.fastq", "data/CyaneaCapillataLEM6R2.1M.fastq"]), pcr: [], rad: [], verbosity: 0 }
+kmer_length	21
+n_reads_read	2000000
+n_bases_read	302000000
+n_subreads_ingested	0
+n_bases_ingested	301958525
+n_kmers	261883372
+n_multi_kmers	169660130
+n_singleton_kmers	92223242

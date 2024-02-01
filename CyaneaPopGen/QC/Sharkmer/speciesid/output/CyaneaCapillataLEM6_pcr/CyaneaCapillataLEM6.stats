@@ -1,0 +1,9 @@
+arguments	Args { k: 21, histo_max: 10000, n: 100, max_reads: 1000000, threads: 1, sample: "CyaneaCapillataLEM6", outdir: "output/CyaneaCapillataLEM6_pcr", input: Some(["data/CyaneaCapillataLEM6R1.1M.fastq", "data/CyaneaCapillataLEM6R2.1M.fastq"]), pcr: ["cnidaria"], rad: [], verbosity: 0 }
+kmer_length	21
+n_reads_read	1000000
+n_bases_read	151000000
+n_subreads_ingested	0
+n_bases_ingested	150996081
+n_kmers	130948824
+n_multi_kmers	64106352
+n_singleton_kmers	66842472
