@@ -1,0 +1,43 @@
+base_read_dir: /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/
+kraken_database: /gpfs/gibbs/data/db/kraken2/k2_standard_20230810/
+sharkmer_database: /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/
+human_bwa: /gpfs/gibbs/data/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/BWAIndex/genome.fa
+human_repeats: /gpfs/ycga/work/dunn/cwd7/databases/GRCh38_repeats.bed
+silva_bwa: /gpfs/ycga/work/dunn/cwd7/databases/silva/SILVA_138.1_SSURef_NR99_tax_silva_trunc.fasta
+nt: /gpfs/gibbs/data/db/blast/nt
+
+scratchdir: "/gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/snakeoutput/"
+gff: ""
+genome: "/gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/IsoSeq/Filtered/Cyanea_sp_transcripts.strict.fasta"
+
+prior_mutation_rate: 0.001
+min_qual: 20
+min_depth: 2
+max_depth: 99
+min_ind: 1
+
+sample:
+  CyaneaCapillataLEM1:
+    reads:
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-capillata_LEM1_R1.fastq.gz
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-capillata_LEM1_R2.fastq.gz
+  CyaneaCapillataLEM2:
+    reads:
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-capillata_LEM2_R1.fastq.gz
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-capillata_LEM2_R2.fastq.gz
+  CyaneaCapillataLEM6:
+    reads:
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-capillata_LEM6_R1.fastq.gz
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-capillata_LEM6_R2.fastq.gz
+  CyaneaCapillataLEM137:
+    reads:
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-capillata_LM137_R1.fastq.gz
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-capillata_LM137_R2.fastq.gz
+  CyaneaFulvaLMD324:
+    reads:
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-fulva_LMD324_R1.fastq.gz
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-fulva_LMD324_R2.fastq.gz
+  CyaneaFulvaLMD524:
+    reads:
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-fulva_LMD524_R1.fastq.gz
+      - /gpfs/gibbs/project/dunn/lem79/CyaneaPopGen/Mapping/RawReads/Cyanea-fulva_LMD524_R1.fastq.gz
