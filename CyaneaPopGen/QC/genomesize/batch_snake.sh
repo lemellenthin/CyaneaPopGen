@@ -12,5 +12,6 @@ module load BEDTools
 module load SAMtools
 module load BWA
 module load miniconda
+# module load matplotlib
 conda activate snakemake
 snakemake --cores $SLURM_CPUS_PER_TASK
