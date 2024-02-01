@@ -2,7 +2,7 @@
 Chapter 3 Cyanea Popgen project
 ---
 
-This is the repository for main analysis of data. The general repository for chapter 3 is 
+This is the repository for main analysis of data. The general repository for chapter 3 is https://github.com/lemellenthin/Chapter3_General
 Good to keep separate for now while analyzing.
 
 ---
