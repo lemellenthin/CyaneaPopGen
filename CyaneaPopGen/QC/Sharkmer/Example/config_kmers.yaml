@@ -1,0 +1,11 @@
+base_read_dir: /vast/palmer/scratch/dunn/cwd7/20231115_clathria/
+kraken_database: /gpfs/gibbs/data/db/kraken2/k2_standard_20230810/
+human_bwa: /gpfs/gibbs/data/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/BWAIndex/genome.fa
+human_repeats: /gpfs/ycga/work/dunn/cwd7/databases/GRCh38_repeats.bed
+silva_bwa: /gpfs/ycga/work/dunn/cwd7/databases/silva/SILVA_138.1_SSURef_NR99_tax_silva_trunc.fasta
+nt: /gpfs/gibbs/data/db/blast/nt
+
+sample:
+  Clathria:
+    reads:
+      - illumina/
