@@ -1,0 +1,8 @@
+name: illumina-qc
+channels:
+  - defaults
+  - bioconda
+dependencies:
+  - fastqc
+  - snakemake
+  - pandas
