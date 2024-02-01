@@ -1,0 +1,9 @@
+arguments	Args { k: 21, histo_max: 10000, n: 100, max_reads: 0, threads: 1, sample: "sample", outdir: "output/CyaneaFulvaLMD524", input: Some(["data/CyaneaFulvaLMD524R1.1M.fastq", "data/CyaneaFulvaLMD524R2.1M.fastq"]), pcr: [], rad: [], verbosity: 0 }
+kmer_length	21
+n_reads_read	2000000
+n_bases_read	302000000
+n_subreads_ingested	0
+n_bases_ingested	301988887
+n_kmers	261864605
+n_multi_kmers	215491592
+n_singleton_kmers	46373013
