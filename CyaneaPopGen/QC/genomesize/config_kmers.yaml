@@ -1,0 +1,24 @@
+base_read_dir: /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/
+kraken_database: /gpfs/gibbs/data/db/kraken2/k2_standard_20230810/
+human_bwa: /gpfs/gibbs/data/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/BWAIndex/genome.fa
+human_repeats: /gpfs/ycga/work/dunn/cwd7/databases/GRCh38_repeats.bed
+
+sample:
+  CyaneaCapillataLEM1:
+    reads:
+      - CyaneaCapillataLEM1/
+  CyaneaCapillataLEM2:
+    reads:
+      - CyaneaCapillataLEM2/
+  CyaneaCapillataLEM6:
+    reads:
+      - CyaneaCapillataLEM6/
+  CyaneaCapillataLM137:
+    reads:
+      - CyaneaCapillataLM137/
+  CyaneaFulvaLMD324:
+    reads:
+      - CyaneaFulvaLMD324/
+  CyaneaFulvaLMD524:
+    reads:
+      - CyaneaFulvaLMD524/

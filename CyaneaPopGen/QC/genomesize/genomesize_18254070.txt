@@ -1,0 +1,807 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 18
+Rules claiming more threads will be scaled down.
+Job stats:
+job                               count    min threads    max threads
+------------------------------  -------  -------------  -------------
+all                                   1              1              1
+final_report                          1              1              1
+generate_freqcov_spectrum             6              1              1
+generate_freqxcov_histo               6              1              1
+generate_kmer_spectrum                6              1              1
+generate_spectrum                     6             18             18
+generate_unclassified_spectrum        6             18             18
+kraken                                6             18             18
+process_and_count_reads               6             18             18
+run_genomescope2                      6              1              1
+run_unclassified_genomescope2         6              1              1
+total                                56              1             18
+
+Select jobs to execute...
+
+[Wed Jan 31 23:50:42 2024]
+rule process_and_count_reads:
+    input: /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaFulvaLMD524
+    output: reads/CyaneaFulvaLMD524_all_R1.fastq, reads/CyaneaFulvaLMD524_all_R2.fastq, reads/CyaneaFulvaLMD524_trimmed_paired_R1.fastq, reads/CyaneaFulvaLMD524_trimmed_unpaired_R1.fastq, reads/CyaneaFulvaLMD524_trimmed_paired_R2.fastq, reads/CyaneaFulvaLMD524_trimmed_unpaired_R2.fastq, output/CyaneaFulvaLMD524.count
+    log: logs/trimmomatic/trimmomatic_CyaneaFulvaLMD524.log
+    jobid: 18
+    reason: Missing output files: reads/CyaneaFulvaLMD524_trimmed_paired_R2.fastq, reads/CyaneaFulvaLMD524_trimmed_paired_R1.fastq, output/CyaneaFulvaLMD524.count
+    wildcards: sample=CyaneaFulvaLMD524
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 00:08:34 2024]
+Finished job 18.
+1 of 56 steps (2%) done
+Removing temporary output reads/CyaneaFulvaLMD524_all_R1.fastq.
+Removing temporary output reads/CyaneaFulvaLMD524_all_R2.fastq.
+Removing temporary output reads/CyaneaFulvaLMD524_trimmed_unpaired_R1.fastq.
+Removing temporary output reads/CyaneaFulvaLMD524_trimmed_unpaired_R2.fastq.
+Select jobs to execute...
+
+[Thu Feb  1 00:08:35 2024]
+rule kraken:
+    input: reads/CyaneaFulvaLMD524_trimmed_paired_R1.fastq, reads/CyaneaFulvaLMD524_trimmed_paired_R2.fastq
+    output: output/kraken/CyaneaFulvaLMD524.report.txt, reads/CyaneaFulvaLMD524_classified_R_1.fastq, reads/CyaneaFulvaLMD524_classified_R_2.fastq, reads/CyaneaFulvaLMD524_unclassified_R_1.fastq, reads/CyaneaFulvaLMD524_unclassified_R_2.fastq, output/kraken/CyaneaFulvaLMD524.kraken.txt
+    log: logs/kraken/kraken_CyaneaFulvaLMD524.log
+    jobid: 54
+    reason: Missing output files: reads/CyaneaFulvaLMD524_unclassified_R_2.fastq, output/kraken/CyaneaFulvaLMD524.report.txt, reads/CyaneaFulvaLMD524_classified_R_2.fastq, reads/CyaneaFulvaLMD524_classified_R_1.fastq, reads/CyaneaFulvaLMD524_unclassified_R_1.fastq; Input files updated by another job: reads/CyaneaFulvaLMD524_trimmed_paired_R2.fastq, reads/CyaneaFulvaLMD524_trimmed_paired_R1.fastq
+    wildcards: sample=CyaneaFulvaLMD524
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 00:12:35 2024]
+Finished job 54.
+2 of 56 steps (4%) done
+Select jobs to execute...
+
+[Thu Feb  1 00:12:36 2024]
+rule generate_spectrum:
+    input: reads/CyaneaFulvaLMD524_trimmed_paired_R1.fastq, reads/CyaneaFulvaLMD524_trimmed_paired_R2.fastq
+    output: output/CyaneaFulvaLMD524_k21.histo, output/CyaneaFulvaLMD524_k21.jf
+    log: logs/jellyfish/jellyfish_CyaneaFulvaLMD524_k21.log
+    jobid: 17
+    reason: Missing output files: output/CyaneaFulvaLMD524_k21.histo; Input files updated by another job: reads/CyaneaFulvaLMD524_trimmed_paired_R2.fastq, reads/CyaneaFulvaLMD524_trimmed_paired_R1.fastq
+    wildcards: sample=CyaneaFulvaLMD524, thisk=21
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 00:19:49 2024]
+Finished job 17.
+3 of 56 steps (5%) done
+Removing temporary output reads/CyaneaFulvaLMD524_trimmed_paired_R2.fastq.
+Removing temporary output reads/CyaneaFulvaLMD524_trimmed_paired_R1.fastq.
+Removing temporary output output/CyaneaFulvaLMD524_k21.jf.
+Select jobs to execute...
+
+[Thu Feb  1 00:19:49 2024]
+rule generate_unclassified_spectrum:
+    input: reads/CyaneaFulvaLMD524_unclassified_R_1.fastq, reads/CyaneaFulvaLMD524_unclassified_R_2.fastq
+    output: output_unclassified/CyaneaFulvaLMD524_k21_unclassified.histo, output_unclassified/CyaneaFulvaLMD524_k21_unclassified.jf
+    log: logs/jellyfish_unclassified/jellyfish_unclassified_CyaneaFulvaLMD524_k21.log
+    jobid: 53
+    reason: Missing output files: output_unclassified/CyaneaFulvaLMD524_k21_unclassified.histo; Input files updated by another job: reads/CyaneaFulvaLMD524_unclassified_R_2.fastq, reads/CyaneaFulvaLMD524_unclassified_R_1.fastq
+    wildcards: sample=CyaneaFulvaLMD524, thisk=21
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 00:26:52 2024]
+Finished job 53.
+4 of 56 steps (7%) done
+Removing temporary output reads/CyaneaFulvaLMD524_unclassified_R_1.fastq.
+Removing temporary output reads/CyaneaFulvaLMD524_unclassified_R_2.fastq.
+Removing temporary output output_unclassified/CyaneaFulvaLMD524_k21_unclassified.jf.
+Select jobs to execute...
+
+[Thu Feb  1 00:26:52 2024]
+rule process_and_count_reads:
+    input: /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaCapillataLEM2
+    output: reads/CyaneaCapillataLEM2_all_R1.fastq, reads/CyaneaCapillataLEM2_all_R2.fastq, reads/CyaneaCapillataLEM2_trimmed_paired_R1.fastq, reads/CyaneaCapillataLEM2_trimmed_unpaired_R1.fastq, reads/CyaneaCapillataLEM2_trimmed_paired_R2.fastq, reads/CyaneaCapillataLEM2_trimmed_unpaired_R2.fastq, output/CyaneaCapillataLEM2.count
+    log: logs/trimmomatic/trimmomatic_CyaneaCapillataLEM2.log
+    jobid: 6
+    reason: Missing output files: reads/CyaneaCapillataLEM2_trimmed_paired_R1.fastq, reads/CyaneaCapillataLEM2_trimmed_paired_R2.fastq, output/CyaneaCapillataLEM2.count
+    wildcards: sample=CyaneaCapillataLEM2
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 00:44:50 2024]
+Finished job 6.
+5 of 56 steps (9%) done
+Removing temporary output reads/CyaneaCapillataLEM2_all_R1.fastq.
+Removing temporary output reads/CyaneaCapillataLEM2_all_R2.fastq.
+Removing temporary output reads/CyaneaCapillataLEM2_trimmed_unpaired_R1.fastq.
+Removing temporary output reads/CyaneaCapillataLEM2_trimmed_unpaired_R2.fastq.
+Select jobs to execute...
+
+[Thu Feb  1 00:44:50 2024]
+rule kraken:
+    input: reads/CyaneaCapillataLEM2_trimmed_paired_R1.fastq, reads/CyaneaCapillataLEM2_trimmed_paired_R2.fastq
+    output: output/kraken/CyaneaCapillataLEM2.report.txt, reads/CyaneaCapillataLEM2_classified_R_1.fastq, reads/CyaneaCapillataLEM2_classified_R_2.fastq, reads/CyaneaCapillataLEM2_unclassified_R_1.fastq, reads/CyaneaCapillataLEM2_unclassified_R_2.fastq, output/kraken/CyaneaCapillataLEM2.kraken.txt
+    log: logs/kraken/kraken_CyaneaCapillataLEM2.log
+    jobid: 42
+    reason: Missing output files: reads/CyaneaCapillataLEM2_unclassified_R_1.fastq, output/kraken/CyaneaCapillataLEM2.report.txt, reads/CyaneaCapillataLEM2_classified_R_1.fastq, reads/CyaneaCapillataLEM2_classified_R_2.fastq, reads/CyaneaCapillataLEM2_unclassified_R_2.fastq; Input files updated by another job: reads/CyaneaCapillataLEM2_trimmed_paired_R1.fastq, reads/CyaneaCapillataLEM2_trimmed_paired_R2.fastq
+    wildcards: sample=CyaneaCapillataLEM2
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 00:49:26 2024]
+Finished job 42.
+6 of 56 steps (11%) done
+Select jobs to execute...
+
+[Thu Feb  1 00:49:27 2024]
+rule generate_spectrum:
+    input: reads/CyaneaCapillataLEM2_trimmed_paired_R1.fastq, reads/CyaneaCapillataLEM2_trimmed_paired_R2.fastq
+    output: output/CyaneaCapillataLEM2_k21.histo, output/CyaneaCapillataLEM2_k21.jf
+    log: logs/jellyfish/jellyfish_CyaneaCapillataLEM2_k21.log
+    jobid: 5
+    reason: Missing output files: output/CyaneaCapillataLEM2_k21.histo; Input files updated by another job: reads/CyaneaCapillataLEM2_trimmed_paired_R1.fastq, reads/CyaneaCapillataLEM2_trimmed_paired_R2.fastq
+    wildcards: sample=CyaneaCapillataLEM2, thisk=21
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 00:58:56 2024]
+Finished job 5.
+7 of 56 steps (12%) done
+Removing temporary output reads/CyaneaCapillataLEM2_trimmed_paired_R1.fastq.
+Removing temporary output reads/CyaneaCapillataLEM2_trimmed_paired_R2.fastq.
+Removing temporary output output/CyaneaCapillataLEM2_k21.jf.
+Select jobs to execute...
+
+[Thu Feb  1 00:58:57 2024]
+rule generate_unclassified_spectrum:
+    input: reads/CyaneaCapillataLEM2_unclassified_R_1.fastq, reads/CyaneaCapillataLEM2_unclassified_R_2.fastq
+    output: output_unclassified/CyaneaCapillataLEM2_k21_unclassified.histo, output_unclassified/CyaneaCapillataLEM2_k21_unclassified.jf
+    log: logs/jellyfish_unclassified/jellyfish_unclassified_CyaneaCapillataLEM2_k21.log
+    jobid: 41
+    reason: Missing output files: output_unclassified/CyaneaCapillataLEM2_k21_unclassified.histo; Input files updated by another job: reads/CyaneaCapillataLEM2_unclassified_R_2.fastq, reads/CyaneaCapillataLEM2_unclassified_R_1.fastq
+    wildcards: sample=CyaneaCapillataLEM2, thisk=21
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 01:09:25 2024]
+Finished job 41.
+8 of 56 steps (14%) done
+Removing temporary output reads/CyaneaCapillataLEM2_unclassified_R_2.fastq.
+Removing temporary output reads/CyaneaCapillataLEM2_unclassified_R_1.fastq.
+Removing temporary output output_unclassified/CyaneaCapillataLEM2_k21_unclassified.jf.
+Select jobs to execute...
+
+[Thu Feb  1 01:09:25 2024]
+rule process_and_count_reads:
+    input: /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaCapillataLM137
+    output: reads/CyaneaCapillataLM137_all_R1.fastq, reads/CyaneaCapillataLM137_all_R2.fastq, reads/CyaneaCapillataLM137_trimmed_paired_R1.fastq, reads/CyaneaCapillataLM137_trimmed_unpaired_R1.fastq, reads/CyaneaCapillataLM137_trimmed_paired_R2.fastq, reads/CyaneaCapillataLM137_trimmed_unpaired_R2.fastq, output/CyaneaCapillataLM137.count
+    log: logs/trimmomatic/trimmomatic_CyaneaCapillataLM137.log
+    jobid: 12
+    reason: Missing output files: reads/CyaneaCapillataLM137_trimmed_paired_R1.fastq, reads/CyaneaCapillataLM137_trimmed_paired_R2.fastq, output/CyaneaCapillataLM137.count
+    wildcards: sample=CyaneaCapillataLM137
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 01:17:46 2024]
+Finished job 12.
+9 of 56 steps (16%) done
+Removing temporary output reads/CyaneaCapillataLM137_all_R1.fastq.
+Removing temporary output reads/CyaneaCapillataLM137_all_R2.fastq.
+Removing temporary output reads/CyaneaCapillataLM137_trimmed_unpaired_R1.fastq.
+Removing temporary output reads/CyaneaCapillataLM137_trimmed_unpaired_R2.fastq.
+Select jobs to execute...
+
+[Thu Feb  1 01:17:47 2024]
+rule kraken:
+    input: reads/CyaneaCapillataLM137_trimmed_paired_R1.fastq, reads/CyaneaCapillataLM137_trimmed_paired_R2.fastq
+    output: output/kraken/CyaneaCapillataLM137.report.txt, reads/CyaneaCapillataLM137_classified_R_1.fastq, reads/CyaneaCapillataLM137_classified_R_2.fastq, reads/CyaneaCapillataLM137_unclassified_R_1.fastq, reads/CyaneaCapillataLM137_unclassified_R_2.fastq, output/kraken/CyaneaCapillataLM137.kraken.txt
+    log: logs/kraken/kraken_CyaneaCapillataLM137.log
+    jobid: 48
+    reason: Missing output files: output/kraken/CyaneaCapillataLM137.report.txt, reads/CyaneaCapillataLM137_unclassified_R_2.fastq, reads/CyaneaCapillataLM137_classified_R_1.fastq, reads/CyaneaCapillataLM137_classified_R_2.fastq, reads/CyaneaCapillataLM137_unclassified_R_1.fastq; Input files updated by another job: reads/CyaneaCapillataLM137_trimmed_paired_R1.fastq, reads/CyaneaCapillataLM137_trimmed_paired_R2.fastq
+    wildcards: sample=CyaneaCapillataLM137
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 01:20:18 2024]
+Finished job 48.
+10 of 56 steps (18%) done
+Select jobs to execute...
+
+[Thu Feb  1 01:20:19 2024]
+rule generate_spectrum:
+    input: reads/CyaneaCapillataLM137_trimmed_paired_R1.fastq, reads/CyaneaCapillataLM137_trimmed_paired_R2.fastq
+    output: output/CyaneaCapillataLM137_k21.histo, output/CyaneaCapillataLM137_k21.jf
+    log: logs/jellyfish/jellyfish_CyaneaCapillataLM137_k21.log
+    jobid: 11
+    reason: Missing output files: output/CyaneaCapillataLM137_k21.histo; Input files updated by another job: reads/CyaneaCapillataLM137_trimmed_paired_R1.fastq, reads/CyaneaCapillataLM137_trimmed_paired_R2.fastq
+    wildcards: sample=CyaneaCapillataLM137, thisk=21
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 01:23:05 2024]
+Finished job 11.
+11 of 56 steps (20%) done
+Removing temporary output reads/CyaneaCapillataLM137_trimmed_paired_R1.fastq.
+Removing temporary output reads/CyaneaCapillataLM137_trimmed_paired_R2.fastq.
+Removing temporary output output/CyaneaCapillataLM137_k21.jf.
+Select jobs to execute...
+
+[Thu Feb  1 01:23:05 2024]
+rule generate_unclassified_spectrum:
+    input: reads/CyaneaCapillataLM137_unclassified_R_1.fastq, reads/CyaneaCapillataLM137_unclassified_R_2.fastq
+    output: output_unclassified/CyaneaCapillataLM137_k21_unclassified.histo, output_unclassified/CyaneaCapillataLM137_k21_unclassified.jf
+    log: logs/jellyfish_unclassified/jellyfish_unclassified_CyaneaCapillataLM137_k21.log
+    jobid: 47
+    reason: Missing output files: output_unclassified/CyaneaCapillataLM137_k21_unclassified.histo; Input files updated by another job: reads/CyaneaCapillataLM137_unclassified_R_1.fastq, reads/CyaneaCapillataLM137_unclassified_R_2.fastq
+    wildcards: sample=CyaneaCapillataLM137, thisk=21
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 01:26:26 2024]
+Finished job 47.
+12 of 56 steps (21%) done
+Removing temporary output reads/CyaneaCapillataLM137_unclassified_R_1.fastq.
+Removing temporary output reads/CyaneaCapillataLM137_unclassified_R_2.fastq.
+Removing temporary output output_unclassified/CyaneaCapillataLM137_k21_unclassified.jf.
+Select jobs to execute...
+
+[Thu Feb  1 01:26:26 2024]
+rule process_and_count_reads:
+    input: /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaCapillataLEM6
+    output: reads/CyaneaCapillataLEM6_all_R1.fastq, reads/CyaneaCapillataLEM6_all_R2.fastq, reads/CyaneaCapillataLEM6_trimmed_paired_R1.fastq, reads/CyaneaCapillataLEM6_trimmed_unpaired_R1.fastq, reads/CyaneaCapillataLEM6_trimmed_paired_R2.fastq, reads/CyaneaCapillataLEM6_trimmed_unpaired_R2.fastq, output/CyaneaCapillataLEM6.count
+    log: logs/trimmomatic/trimmomatic_CyaneaCapillataLEM6.log
+    jobid: 9
+    reason: Missing output files: reads/CyaneaCapillataLEM6_trimmed_paired_R1.fastq, output/CyaneaCapillataLEM6.count, reads/CyaneaCapillataLEM6_trimmed_paired_R2.fastq
+    wildcards: sample=CyaneaCapillataLEM6
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 01:42:20 2024]
+Finished job 9.
+13 of 56 steps (23%) done
+Removing temporary output reads/CyaneaCapillataLEM6_all_R1.fastq.
+Removing temporary output reads/CyaneaCapillataLEM6_all_R2.fastq.
+Removing temporary output reads/CyaneaCapillataLEM6_trimmed_unpaired_R1.fastq.
+Removing temporary output reads/CyaneaCapillataLEM6_trimmed_unpaired_R2.fastq.
+Select jobs to execute...
+
+[Thu Feb  1 01:42:20 2024]
+rule generate_spectrum:
+    input: reads/CyaneaCapillataLEM6_trimmed_paired_R1.fastq, reads/CyaneaCapillataLEM6_trimmed_paired_R2.fastq
+    output: output/CyaneaCapillataLEM6_k21.histo, output/CyaneaCapillataLEM6_k21.jf
+    log: logs/jellyfish/jellyfish_CyaneaCapillataLEM6_k21.log
+    jobid: 8
+    reason: Missing output files: output/CyaneaCapillataLEM6_k21.histo; Input files updated by another job: reads/CyaneaCapillataLEM6_trimmed_paired_R1.fastq, reads/CyaneaCapillataLEM6_trimmed_paired_R2.fastq
+    wildcards: sample=CyaneaCapillataLEM6, thisk=21
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 01:50:41 2024]
+Finished job 8.
+14 of 56 steps (25%) done
+Removing temporary output output/CyaneaCapillataLEM6_k21.jf.
+Select jobs to execute...
+
+[Thu Feb  1 01:50:41 2024]
+rule kraken:
+    input: reads/CyaneaCapillataLEM6_trimmed_paired_R1.fastq, reads/CyaneaCapillataLEM6_trimmed_paired_R2.fastq
+    output: output/kraken/CyaneaCapillataLEM6.report.txt, reads/CyaneaCapillataLEM6_classified_R_1.fastq, reads/CyaneaCapillataLEM6_classified_R_2.fastq, reads/CyaneaCapillataLEM6_unclassified_R_1.fastq, reads/CyaneaCapillataLEM6_unclassified_R_2.fastq, output/kraken/CyaneaCapillataLEM6.kraken.txt
+    log: logs/kraken/kraken_CyaneaCapillataLEM6.log
+    jobid: 45
+    reason: Missing output files: reads/CyaneaCapillataLEM6_unclassified_R_1.fastq, reads/CyaneaCapillataLEM6_unclassified_R_2.fastq, reads/CyaneaCapillataLEM6_classified_R_1.fastq, output/kraken/CyaneaCapillataLEM6.report.txt, reads/CyaneaCapillataLEM6_classified_R_2.fastq; Input files updated by another job: reads/CyaneaCapillataLEM6_trimmed_paired_R1.fastq, reads/CyaneaCapillataLEM6_trimmed_paired_R2.fastq
+    wildcards: sample=CyaneaCapillataLEM6
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 01:54:59 2024]
+Finished job 45.
+15 of 56 steps (27%) done
+Removing temporary output reads/CyaneaCapillataLEM6_trimmed_paired_R1.fastq.
+Removing temporary output reads/CyaneaCapillataLEM6_trimmed_paired_R2.fastq.
+Select jobs to execute...
+
+[Thu Feb  1 01:54:59 2024]
+rule generate_unclassified_spectrum:
+    input: reads/CyaneaCapillataLEM6_unclassified_R_1.fastq, reads/CyaneaCapillataLEM6_unclassified_R_2.fastq
+    output: output_unclassified/CyaneaCapillataLEM6_k21_unclassified.histo, output_unclassified/CyaneaCapillataLEM6_k21_unclassified.jf
+    log: logs/jellyfish_unclassified/jellyfish_unclassified_CyaneaCapillataLEM6_k21.log
+    jobid: 44
+    reason: Missing output files: output_unclassified/CyaneaCapillataLEM6_k21_unclassified.histo; Input files updated by another job: reads/CyaneaCapillataLEM6_unclassified_R_1.fastq, reads/CyaneaCapillataLEM6_unclassified_R_2.fastq
+    wildcards: sample=CyaneaCapillataLEM6, thisk=21
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 02:03:49 2024]
+Finished job 44.
+16 of 56 steps (29%) done
+Removing temporary output reads/CyaneaCapillataLEM6_unclassified_R_1.fastq.
+Removing temporary output reads/CyaneaCapillataLEM6_unclassified_R_2.fastq.
+Removing temporary output output_unclassified/CyaneaCapillataLEM6_k21_unclassified.jf.
+Select jobs to execute...
+
+[Thu Feb  1 02:03:49 2024]
+rule process_and_count_reads:
+    input: /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaFulvaLMD324
+    output: reads/CyaneaFulvaLMD324_all_R1.fastq, reads/CyaneaFulvaLMD324_all_R2.fastq, reads/CyaneaFulvaLMD324_trimmed_paired_R1.fastq, reads/CyaneaFulvaLMD324_trimmed_unpaired_R1.fastq, reads/CyaneaFulvaLMD324_trimmed_paired_R2.fastq, reads/CyaneaFulvaLMD324_trimmed_unpaired_R2.fastq, output/CyaneaFulvaLMD324.count
+    log: logs/trimmomatic/trimmomatic_CyaneaFulvaLMD324.log
+    jobid: 15
+    reason: Missing output files: reads/CyaneaFulvaLMD324_trimmed_paired_R1.fastq, reads/CyaneaFulvaLMD324_trimmed_paired_R2.fastq, output/CyaneaFulvaLMD324.count
+    wildcards: sample=CyaneaFulvaLMD324
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 02:21:42 2024]
+Finished job 15.
+17 of 56 steps (30%) done
+Removing temporary output reads/CyaneaFulvaLMD324_all_R1.fastq.
+Removing temporary output reads/CyaneaFulvaLMD324_all_R2.fastq.
+Removing temporary output reads/CyaneaFulvaLMD324_trimmed_unpaired_R1.fastq.
+Removing temporary output reads/CyaneaFulvaLMD324_trimmed_unpaired_R2.fastq.
+Select jobs to execute...
+
+[Thu Feb  1 02:21:43 2024]
+rule generate_spectrum:
+    input: reads/CyaneaFulvaLMD324_trimmed_paired_R1.fastq, reads/CyaneaFulvaLMD324_trimmed_paired_R2.fastq
+    output: output/CyaneaFulvaLMD324_k21.histo, output/CyaneaFulvaLMD324_k21.jf
+    log: logs/jellyfish/jellyfish_CyaneaFulvaLMD324_k21.log
+    jobid: 14
+    reason: Missing output files: output/CyaneaFulvaLMD324_k21.histo; Input files updated by another job: reads/CyaneaFulvaLMD324_trimmed_paired_R1.fastq, reads/CyaneaFulvaLMD324_trimmed_paired_R2.fastq
+    wildcards: sample=CyaneaFulvaLMD324, thisk=21
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 02:34:01 2024]
+Finished job 14.
+18 of 56 steps (32%) done
+Removing temporary output output/CyaneaFulvaLMD324_k21.jf.
+Select jobs to execute...
+
+[Thu Feb  1 02:34:02 2024]
+rule kraken:
+    input: reads/CyaneaFulvaLMD324_trimmed_paired_R1.fastq, reads/CyaneaFulvaLMD324_trimmed_paired_R2.fastq
+    output: output/kraken/CyaneaFulvaLMD324.report.txt, reads/CyaneaFulvaLMD324_classified_R_1.fastq, reads/CyaneaFulvaLMD324_classified_R_2.fastq, reads/CyaneaFulvaLMD324_unclassified_R_1.fastq, reads/CyaneaFulvaLMD324_unclassified_R_2.fastq, output/kraken/CyaneaFulvaLMD324.kraken.txt
+    log: logs/kraken/kraken_CyaneaFulvaLMD324.log
+    jobid: 51
+    reason: Missing output files: reads/CyaneaFulvaLMD324_unclassified_R_1.fastq, reads/CyaneaFulvaLMD324_classified_R_2.fastq, output/kraken/CyaneaFulvaLMD324.report.txt, reads/CyaneaFulvaLMD324_classified_R_1.fastq, reads/CyaneaFulvaLMD324_unclassified_R_2.fastq; Input files updated by another job: reads/CyaneaFulvaLMD324_trimmed_paired_R1.fastq, reads/CyaneaFulvaLMD324_trimmed_paired_R2.fastq
+    wildcards: sample=CyaneaFulvaLMD324
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 02:38:49 2024]
+Finished job 51.
+19 of 56 steps (34%) done
+Removing temporary output reads/CyaneaFulvaLMD324_trimmed_paired_R1.fastq.
+Removing temporary output reads/CyaneaFulvaLMD324_trimmed_paired_R2.fastq.
+Select jobs to execute...
+
+[Thu Feb  1 02:38:49 2024]
+rule generate_unclassified_spectrum:
+    input: reads/CyaneaFulvaLMD324_unclassified_R_1.fastq, reads/CyaneaFulvaLMD324_unclassified_R_2.fastq
+    output: output_unclassified/CyaneaFulvaLMD324_k21_unclassified.histo, output_unclassified/CyaneaFulvaLMD324_k21_unclassified.jf
+    log: logs/jellyfish_unclassified/jellyfish_unclassified_CyaneaFulvaLMD324_k21.log
+    jobid: 50
+    reason: Missing output files: output_unclassified/CyaneaFulvaLMD324_k21_unclassified.histo; Input files updated by another job: reads/CyaneaFulvaLMD324_unclassified_R_2.fastq, reads/CyaneaFulvaLMD324_unclassified_R_1.fastq
+    wildcards: sample=CyaneaFulvaLMD324, thisk=21
+    threads: 18
+    resources: tmpdir=/tmp
+
+[Thu Feb  1 02:48:46 2024]
+Finished job 50.
+20 of 56 steps (36%) done
+Removing temporary output reads/CyaneaFulvaLMD324_unclassified_R_2.fastq.
+Removing temporary output reads/CyaneaFulvaLMD324_unclassified_R_1.fastq.
+Removing temporary output output_unclassified/CyaneaFulvaLMD324_k21_unclassified.jf.
+Select jobs to execute...
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_kmer_spectrum:
+    input: output/CyaneaFulvaLMD524_k21.histo
+    output: output/CyaneaFulvaLMD524_k21.histo.pdf
+    jobid: 16
+    reason: Missing output files: output/CyaneaFulvaLMD524_k21.histo.pdf; Input files updated by another job: output/CyaneaFulvaLMD524_k21.histo
+    wildcards: sample=CyaneaFulvaLMD524, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_freqxcov_histo:
+    input: output/CyaneaFulvaLMD524_k21.histo
+    output: output/CyaneaFulvaLMD524_k21.freqxcov
+    jobid: 30
+    reason: Missing output files: output/CyaneaFulvaLMD524_k21.freqxcov; Input files updated by another job: output/CyaneaFulvaLMD524_k21.histo
+    wildcards: sample=CyaneaFulvaLMD524, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule run_genomescope2:
+    input: output/CyaneaCapillataLEM2_k21.histo
+    output: output/CyaneaCapillataLEM2_k21_linear_plot.png, output/CyaneaCapillataLEM2_k21_summary.txt
+    log: logs/genomescope2/genomescope2_CyaneaCapillataLEM2_k21.log
+    jobid: 32
+    reason: Missing output files: output/CyaneaCapillataLEM2_k21_linear_plot.png, output/CyaneaCapillataLEM2_k21_summary.txt; Input files updated by another job: output/CyaneaCapillataLEM2_k21.histo
+    wildcards: sample=CyaneaCapillataLEM2, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_kmer_spectrum:
+    input: output/CyaneaFulvaLMD324_k21.histo
+    output: output/CyaneaFulvaLMD324_k21.histo.pdf
+    jobid: 13
+    reason: Missing output files: output/CyaneaFulvaLMD324_k21.histo.pdf; Input files updated by another job: output/CyaneaFulvaLMD324_k21.histo
+    wildcards: sample=CyaneaFulvaLMD324, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_freqxcov_histo:
+    input: output/CyaneaCapillataLEM2_k21.histo
+    output: output/CyaneaCapillataLEM2_k21.freqxcov
+    jobid: 22
+    reason: Missing output files: output/CyaneaCapillataLEM2_k21.freqxcov; Input files updated by another job: output/CyaneaCapillataLEM2_k21.histo
+    wildcards: sample=CyaneaCapillataLEM2, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule run_unclassified_genomescope2:
+    input: output_unclassified/CyaneaCapillataLEM6_k21_unclassified.histo
+    output: output_unclassified/CyaneaCapillataLEM6_k21_linear_plot.png, output_unclassified/CyaneaCapillataLEM6_k21_summary.txt
+    log: logs/genomescope2_unclassified/genomescope2_CyaneaCapillataLEM6_k21_unclassified.log
+    jobid: 43
+    reason: Missing output files: output_unclassified/CyaneaCapillataLEM6_k21_linear_plot.png; Input files updated by another job: output_unclassified/CyaneaCapillataLEM6_k21_unclassified.histo
+    wildcards: sample=CyaneaCapillataLEM6, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule run_genomescope2:
+    input: output/CyaneaCapillataLEM6_k21.histo
+    output: output/CyaneaCapillataLEM6_k21_linear_plot.png, output/CyaneaCapillataLEM6_k21_summary.txt
+    log: logs/genomescope2/genomescope2_CyaneaCapillataLEM6_k21.log
+    jobid: 33
+    reason: Missing output files: output/CyaneaCapillataLEM6_k21_linear_plot.png, output/CyaneaCapillataLEM6_k21_summary.txt; Input files updated by another job: output/CyaneaCapillataLEM6_k21.histo
+    wildcards: sample=CyaneaCapillataLEM6, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_freqxcov_histo:
+    input: output/CyaneaCapillataLEM6_k21.histo
+    output: output/CyaneaCapillataLEM6_k21.freqxcov
+    jobid: 24
+    reason: Missing output files: output/CyaneaCapillataLEM6_k21.freqxcov; Input files updated by another job: output/CyaneaCapillataLEM6_k21.histo
+    wildcards: sample=CyaneaCapillataLEM6, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule run_genomescope2:
+    input: output/CyaneaFulvaLMD324_k21.histo
+    output: output/CyaneaFulvaLMD324_k21_linear_plot.png, output/CyaneaFulvaLMD324_k21_summary.txt
+    log: logs/genomescope2/genomescope2_CyaneaFulvaLMD324_k21.log
+    jobid: 35
+    reason: Missing output files: output/CyaneaFulvaLMD324_k21_linear_plot.png, output/CyaneaFulvaLMD324_k21_summary.txt; Input files updated by another job: output/CyaneaFulvaLMD324_k21.histo
+    wildcards: sample=CyaneaFulvaLMD324, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_freqxcov_histo:
+    input: output/CyaneaCapillataLM137_k21.histo
+    output: output/CyaneaCapillataLM137_k21.freqxcov
+    jobid: 26
+    reason: Missing output files: output/CyaneaCapillataLM137_k21.freqxcov; Input files updated by another job: output/CyaneaCapillataLM137_k21.histo
+    wildcards: sample=CyaneaCapillataLM137, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_freqxcov_histo:
+    input: output/CyaneaFulvaLMD324_k21.histo
+    output: output/CyaneaFulvaLMD324_k21.freqxcov
+    jobid: 28
+    reason: Missing output files: output/CyaneaFulvaLMD324_k21.freqxcov; Input files updated by another job: output/CyaneaFulvaLMD324_k21.histo
+    wildcards: sample=CyaneaFulvaLMD324, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule run_unclassified_genomescope2:
+    input: output_unclassified/CyaneaFulvaLMD324_k21_unclassified.histo
+    output: output_unclassified/CyaneaFulvaLMD324_k21_linear_plot.png, output_unclassified/CyaneaFulvaLMD324_k21_summary.txt
+    log: logs/genomescope2_unclassified/genomescope2_CyaneaFulvaLMD324_k21_unclassified.log
+    jobid: 49
+    reason: Missing output files: output_unclassified/CyaneaFulvaLMD324_k21_linear_plot.png; Input files updated by another job: output_unclassified/CyaneaFulvaLMD324_k21_unclassified.histo
+    wildcards: sample=CyaneaFulvaLMD324, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_kmer_spectrum:
+    input: output/CyaneaCapillataLEM6_k21.histo
+    output: output/CyaneaCapillataLEM6_k21.histo.pdf
+    jobid: 7
+    reason: Missing output files: output/CyaneaCapillataLEM6_k21.histo.pdf; Input files updated by another job: output/CyaneaCapillataLEM6_k21.histo
+    wildcards: sample=CyaneaCapillataLEM6, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_kmer_spectrum:
+    input: output/CyaneaCapillataLEM2_k21.histo
+    output: output/CyaneaCapillataLEM2_k21.histo.pdf
+    jobid: 4
+    reason: Missing output files: output/CyaneaCapillataLEM2_k21.histo.pdf; Input files updated by another job: output/CyaneaCapillataLEM2_k21.histo
+    wildcards: sample=CyaneaCapillataLEM2, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_kmer_spectrum:
+    input: output/CyaneaCapillataLM137_k21.histo
+    output: output/CyaneaCapillataLM137_k21.histo.pdf
+    jobid: 10
+    reason: Missing output files: output/CyaneaCapillataLM137_k21.histo.pdf; Input files updated by another job: output/CyaneaCapillataLM137_k21.histo
+    wildcards: sample=CyaneaCapillataLM137, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule run_genomescope2:
+    input: output/CyaneaCapillataLM137_k21.histo
+    output: output/CyaneaCapillataLM137_k21_linear_plot.png, output/CyaneaCapillataLM137_k21_summary.txt
+    log: logs/genomescope2/genomescope2_CyaneaCapillataLM137_k21.log
+    jobid: 34
+    reason: Missing output files: output/CyaneaCapillataLM137_k21_summary.txt, output/CyaneaCapillataLM137_k21_linear_plot.png; Input files updated by another job: output/CyaneaCapillataLM137_k21.histo
+    wildcards: sample=CyaneaCapillataLM137, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule run_unclassified_genomescope2:
+    input: output_unclassified/CyaneaCapillataLM137_k21_unclassified.histo
+    output: output_unclassified/CyaneaCapillataLM137_k21_linear_plot.png, output_unclassified/CyaneaCapillataLM137_k21_summary.txt
+    log: logs/genomescope2_unclassified/genomescope2_CyaneaCapillataLM137_k21_unclassified.log
+    jobid: 46
+    reason: Missing output files: output_unclassified/CyaneaCapillataLM137_k21_linear_plot.png; Input files updated by another job: output_unclassified/CyaneaCapillataLM137_k21_unclassified.histo
+    wildcards: sample=CyaneaCapillataLM137, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule run_genomescope2:
+    input: output/CyaneaFulvaLMD524_k21.histo
+    output: output/CyaneaFulvaLMD524_k21_linear_plot.png, output/CyaneaFulvaLMD524_k21_summary.txt
+    log: logs/genomescope2/genomescope2_CyaneaFulvaLMD524_k21.log
+    jobid: 36
+    reason: Missing output files: output/CyaneaFulvaLMD524_k21_linear_plot.png, output/CyaneaFulvaLMD524_k21_summary.txt; Input files updated by another job: output/CyaneaFulvaLMD524_k21.histo
+    wildcards: sample=CyaneaFulvaLMD524, thisk=21
+    resources: tmpdir=/tmp
+
+python: can't open file '/gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/QC/genomesize/plot_uniq_c.py': [Errno 2] No such file or directory
+python: can't open file '/gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/QC/genomesize/plot_uniq_c.py': [Errno 2] No such file or directory
+python: can't open file '/gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/QC/genomesize/plot_uniq_c.py': [Errno 2] No such file or directory
+python: can't open file '/gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/QC/genomesize/plot_uniq_c.py': [Errno 2] No such file or directory
+python: can't open file '/gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/QC/genomesize/plot_uniq_c.py': [Errno 2] No such file or directory
+[Thu Feb  1 02:48:46 2024]
+Finished job 30.
+21 of 56 steps (38%) done
+[Thu Feb  1 02:48:46 2024]
+Finished job 22.
+22 of 56 steps (39%) done
+[Thu Feb  1 02:48:46 2024]
+Finished job 24.
+23 of 56 steps (41%) done
+[Thu Feb  1 02:48:46 2024]
+Finished job 26.
+24 of 56 steps (43%) done
+[Thu Feb  1 02:48:46 2024]
+Finished job 28.
+25 of 56 steps (45%) done
+Select jobs to execute...
+
+[Thu Feb  1 02:48:46 2024]
+rule run_unclassified_genomescope2:
+    input: output_unclassified/CyaneaCapillataLEM2_k21_unclassified.histo
+    output: output_unclassified/CyaneaCapillataLEM2_k21_linear_plot.png, output_unclassified/CyaneaCapillataLEM2_k21_summary.txt
+    log: logs/genomescope2_unclassified/genomescope2_CyaneaCapillataLEM2_k21_unclassified.log
+    jobid: 40
+    reason: Missing output files: output_unclassified/CyaneaCapillataLEM2_k21_linear_plot.png; Input files updated by another job: output_unclassified/CyaneaCapillataLEM2_k21_unclassified.histo
+    wildcards: sample=CyaneaCapillataLEM2, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule run_unclassified_genomescope2:
+    input: output_unclassified/CyaneaFulvaLMD524_k21_unclassified.histo
+    output: output_unclassified/CyaneaFulvaLMD524_k21_linear_plot.png, output_unclassified/CyaneaFulvaLMD524_k21_summary.txt
+    log: logs/genomescope2_unclassified/genomescope2_CyaneaFulvaLMD524_k21_unclassified.log
+    jobid: 52
+    reason: Missing output files: output_unclassified/CyaneaFulvaLMD524_k21_linear_plot.png; Input files updated by another job: output_unclassified/CyaneaFulvaLMD524_k21_unclassified.histo
+    wildcards: sample=CyaneaFulvaLMD524, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_freqcov_spectrum:
+    input: output/CyaneaCapillataLEM2_k21.freqxcov
+    output: output/CyaneaCapillataLEM2_k21.freqxcov.pdf
+    jobid: 21
+    reason: Missing output files: output/CyaneaCapillataLEM2_k21.freqxcov.pdf; Input files updated by another job: output/CyaneaCapillataLEM2_k21.freqxcov
+    wildcards: sample=CyaneaCapillataLEM2, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_freqcov_spectrum:
+    input: output/CyaneaCapillataLEM6_k21.freqxcov
+    output: output/CyaneaCapillataLEM6_k21.freqxcov.pdf
+    jobid: 23
+    reason: Missing output files: output/CyaneaCapillataLEM6_k21.freqxcov.pdf; Input files updated by another job: output/CyaneaCapillataLEM6_k21.freqxcov
+    wildcards: sample=CyaneaCapillataLEM6, thisk=21
+    resources: tmpdir=/tmp
+
+
+[Thu Feb  1 02:48:46 2024]
+rule generate_freqcov_spectrum:
+    input: output/CyaneaCapillataLM137_k21.freqxcov
+    output: output/CyaneaCapillataLM137_k21.freqxcov.pdf
+    jobid: 25
+    reason: Missing output files: output/CyaneaCapillataLM137_k21.freqxcov.pdf; Input files updated by another job: output/CyaneaCapillataLM137_k21.freqxcov
+    wildcards: sample=CyaneaCapillataLM137, thisk=21
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Thu Feb  1 02:48:46 2024]
+[Thu Feb  1 02:48:46 2024]
+Error in rule generate_kmer_spectrum:
+    jobid: 10
+    input: output/CyaneaCapillataLM137_k21.histo
+    output: output/CyaneaCapillataLM137_k21.histo.pdf
+    shell:
+        
+        cat output/CyaneaCapillataLM137_k21.histo | python plot_uniq_c.py -x 15 -X 400 -d -s           --xlab 'coverage' --ylab 'frequency'           --title 'CyaneaCapillataLM137 k-21 spectrum'           -o output/CyaneaCapillataLM137_k21.histo.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule generate_kmer_spectrum:
+    jobid: 7
+    input: output/CyaneaCapillataLEM6_k21.histo
+    output: output/CyaneaCapillataLEM6_k21.histo.pdf
+    shell:
+        
+        cat output/CyaneaCapillataLEM6_k21.histo | python plot_uniq_c.py -x 15 -X 400 -d -s           --xlab 'coverage' --ylab 'frequency'           --title 'CyaneaCapillataLEM6 k-21 spectrum'           -o output/CyaneaCapillataLEM6_k21.histo.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Feb  1 02:48:46 2024]
+Error in rule generate_kmer_spectrum:
+    jobid: 13
+    input: output/CyaneaFulvaLMD324_k21.histo
+    output: output/CyaneaFulvaLMD324_k21.histo.pdf
+    shell:
+        
+        cat output/CyaneaFulvaLMD324_k21.histo | python plot_uniq_c.py -x 15 -X 400 -d -s           --xlab 'coverage' --ylab 'frequency'           --title 'CyaneaFulvaLMD324 k-21 spectrum'           -o output/CyaneaFulvaLMD324_k21.histo.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Feb  1 02:48:46 2024]
+Error in rule generate_kmer_spectrum:
+    jobid: 16
+    input: output/CyaneaFulvaLMD524_k21.histo
+    output: output/CyaneaFulvaLMD524_k21.histo.pdf
+    shell:
+        
+        cat output/CyaneaFulvaLMD524_k21.histo | python plot_uniq_c.py -x 15 -X 400 -d -s           --xlab 'coverage' --ylab 'frequency'           --title 'CyaneaFulvaLMD524 k-21 spectrum'           -o output/CyaneaFulvaLMD524_k21.histo.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Feb  1 02:48:46 2024]
+Error in rule generate_kmer_spectrum:
+    jobid: 4
+    input: output/CyaneaCapillataLEM2_k21.histo
+    output: output/CyaneaCapillataLEM2_k21.histo.pdf
+    shell:
+        
+        cat output/CyaneaCapillataLEM2_k21.histo | python plot_uniq_c.py -x 15 -X 400 -d -s           --xlab 'coverage' --ylab 'frequency'           --title 'CyaneaCapillataLEM2 k-21 spectrum'           -o output/CyaneaCapillataLEM2_k21.histo.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+python: can't open file '/gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/QC/genomesize/plot_uniq_c.py': [Errno 2] No such file or directory
+[Thu Feb  1 02:48:46 2024]
+Error in rule generate_freqcov_spectrum:
+    jobid: 21
+    input: output/CyaneaCapillataLEM2_k21.freqxcov
+    output: output/CyaneaCapillataLEM2_k21.freqxcov.pdf
+    shell:
+        
+        cat output/CyaneaCapillataLEM2_k21.freqxcov | python plot_uniq_c.py -x 0 -X 30 -d -s           --xlab 'coverage' --ylab 'frequency * coverage'           --title 'CyaneaCapillataLEM2 k-21 spectrum'           -o output/CyaneaCapillataLEM2_k21.freqxcov.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+python: can't open file '/gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/QC/genomesize/plot_uniq_c.py': [Errno 2] No such file or directory
+[Thu Feb  1 02:48:46 2024]
+Error in rule generate_freqcov_spectrum:
+    jobid: 23
+    input: output/CyaneaCapillataLEM6_k21.freqxcov
+    output: output/CyaneaCapillataLEM6_k21.freqxcov.pdf
+    shell:
+        
+        cat output/CyaneaCapillataLEM6_k21.freqxcov | python plot_uniq_c.py -x 0 -X 30 -d -s           --xlab 'coverage' --ylab 'frequency * coverage'           --title 'CyaneaCapillataLEM6 k-21 spectrum'           -o output/CyaneaCapillataLEM6_k21.freqxcov.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+python: can't open file '/gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/QC/genomesize/plot_uniq_c.py': [Errno 2] No such file or directory
+[Thu Feb  1 02:48:46 2024]
+Error in rule generate_freqcov_spectrum:
+    jobid: 25
+    input: output/CyaneaCapillataLM137_k21.freqxcov
+    output: output/CyaneaCapillataLM137_k21.freqxcov.pdf
+    shell:
+        
+        cat output/CyaneaCapillataLM137_k21.freqxcov | python plot_uniq_c.py -x 0 -X 30 -d -s           --xlab 'coverage' --ylab 'frequency * coverage'           --title 'CyaneaCapillataLM137 k-21 spectrum'           -o output/CyaneaCapillataLM137_k21.freqxcov.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+GenomeScope analyzing output/CyaneaCapillataLEM2_k21.histo p=2 k=21 outdir=CyaneaCapillataLEM2_k21
+GenomeScope analyzing output_unclassified/CyaneaCapillataLM137_k21_unclassified.histo p=2 k=21 outdir=CyaneaCapillataLM137_k21_unclassified
+GenomeScope analyzing output/CyaneaCapillataLM137_k21.histo p=2 k=21 outdir=CyaneaCapillataLM137_k21
+GenomeScope analyzing output/CyaneaFulvaLMD324_k21.histo p=2 k=21 outdir=CyaneaFulvaLMD324_k21
+GenomeScope analyzing output/CyaneaFulvaLMD524_k21.histo p=2 k=21 outdir=CyaneaFulvaLMD524_k21
+GenomeScope analyzing output/CyaneaCapillataLEM6_k21.histo p=2 k=21 outdir=CyaneaCapillataLEM6_k21
+GenomeScope analyzing output_unclassified/CyaneaCapillataLEM6_k21_unclassified.histo p=2 k=21 outdir=CyaneaCapillataLEM6_k21_unclassified
+GenomeScope analyzing output_unclassified/CyaneaFulvaLMD324_k21_unclassified.histo p=2 k=21 outdir=CyaneaFulvaLMD324_k21_unclassified
+GenomeScope analyzing output_unclassified/CyaneaCapillataLEM2_k21_unclassified.histo p=2 k=21 outdir=CyaneaCapillataLEM2_k21_unclassified
+GenomeScope analyzing output_unclassified/CyaneaFulvaLMD524_k21_unclassified.histo p=2 k=21 outdir=CyaneaFulvaLMD524_k21_unclassified
+aa:97.3% ab:2.66%
+aa:97.3% ab:2.66%
+Model converged het:0.0266 kcov:51.8 err:0.00516 model fit:0.928 len:214793054
+Model converged het:0.0266 kcov:51.8 err:0.00516 model fit:0.906 len:216197855
+[Thu Feb  1 02:48:54 2024]
+Finished job 40.
+26 of 56 steps (46%) done
+[Thu Feb  1 02:48:54 2024]
+Finished job 32.
+27 of 56 steps (48%) done
+aa:97.3% ab:2.68%
+Model converged het:0.0268 kcov:47.8 err:0.00476 model fit:1.23 len:207555190
+aa:97.3% ab:2.67%
+Model converged het:0.0267 kcov:47.9 err:0.00477 model fit:1.21 len:208846736
+aa:97.3% ab:2.73%
+aa:97.3% ab:2.72%
+Model converged het:0.0273 kcov:24.2 err:0.00214 model fit:1.16 len:208387914
+Model converged het:0.0272 kcov:24.3 err:0.0022 model fit:1.16 len:209703730
+[Thu Feb  1 02:48:55 2024]
+Finished job 43.
+28 of 56 steps (50%) done
+[Thu Feb  1 02:48:55 2024]
+Finished job 33.
+29 of 56 steps (52%) done
+[Thu Feb  1 02:48:55 2024]
+Finished job 46.
+30 of 56 steps (54%) done
+[Thu Feb  1 02:48:55 2024]
+Finished job 34.
+31 of 56 steps (55%) done
+aa:100% ab:0.001%
+Model converged het:1e-05 kcov:33.6 err:0.00155 model fit:23 len:369429976
+aa:100% ab:0.001%
+Model converged het:1e-05 kcov:33.4 err:0.00148 model fit:23.2 len:371092383
+[Thu Feb  1 02:49:05 2024]
+Finished job 36.
+32 of 56 steps (57%) done
+[Thu Feb  1 02:49:05 2024]
+Finished job 52.
+33 of 56 steps (59%) done
+aa:92.6% ab:7.4%
+Model converged het:0.074 kcov:22.8 err:0.00304 model fit:81.6 len:Inf
+[Thu Feb  1 02:49:41 2024]
+Finished job 49.
+34 of 56 steps (61%) done
+aa:92.2% ab:7.79%
+Model converged het:0.0779 kcov:20.3 err:0.00313 model fit:85.2 len:Inf
+[Thu Feb  1 02:49:44 2024]
+Finished job 35.
+35 of 56 steps (62%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-01-31T235041.567240.snakemake.log
