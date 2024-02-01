@@ -1,0 +1,26 @@
+base_read_dir: /gpfs/ycga/work/dunn/cwd7/sequences/Novaseq_siphgenomes/
+sample:
+  Chelophyes-appendiculata: 
+    reads:      
+      - Sample_CWD122_133_060/  
+  Cordagalma-ordinatum: 
+    reads:
+      - Sample_CWD6_184_009/ 
+  Nanomia-bijuga-Atlantic:
+    reads:
+      - Sample_CWD16_296_281/
+  Nanomia-Pacific:
+    reads:
+      - Sample_NA19_152_041/
+  Physalia-physalis-Pacific:
+    reads:
+      - Sample_NA22_176_017
+  Agalma-elegans-Pacific: 
+    reads:      
+      - Sample_CWD116_134_059/ 
+  Gymnopraia-lapislazula:
+    reads:      
+      - Sample_CWD144_124_069/ 
+  Resomia-ornicephala-T898-D2: 
+    reads:      
+      - Sample_NA10_182_011/ 
