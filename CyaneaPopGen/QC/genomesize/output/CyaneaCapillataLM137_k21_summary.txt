@@ -1,0 +1,15 @@
+GenomeScope version 2.0
+input file = output/CyaneaCapillataLM137_k21.histo
+output directory = CyaneaCapillataLM137_k21
+p = 2
+k = 21
+name prefix = CyaneaCapillataLM137_k21
+
+property                      min               max               
+Homozygous (aa)               97.2524%          97.3022%          
+Heterozygous (ab)             2.69779%          2.74762%          
+Genome Haploid Length         208,408,092 bp    209,703,730 bp    
+Genome Repeat Length          87,148,516 bp     87,690,303 bp     
+Genome Unique Length          121,259,576 bp    122,013,427 bp    
+Model Fit                     66.0952%          97.6449%          
+Read Error Rate               0.219637%         0.219637%         

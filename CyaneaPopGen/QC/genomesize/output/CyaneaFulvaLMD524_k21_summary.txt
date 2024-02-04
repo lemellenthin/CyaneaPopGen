@@ -1,0 +1,15 @@
+GenomeScope version 2.0
+input file = output/CyaneaFulvaLMD524_k21.histo
+output directory = CyaneaFulvaLMD524_k21
+p = 2
+k = 21
+name prefix = CyaneaFulvaLMD524_k21
+
+property                      min               max               
+Homozygous (aa)               99.4119%          100%              
+Heterozygous (ab)             0%                0.588104%         
+Genome Haploid Length         294,347,411 bp    369,429,976 bp    
+Genome Repeat Length          162,054,501 bp    203,391,599 bp    
+Genome Unique Length          132,292,909 bp    166,038,377 bp    
+Model Fit                     68.0202%          94.2294%          
+Read Error Rate               0.155254%         0.155254%         
