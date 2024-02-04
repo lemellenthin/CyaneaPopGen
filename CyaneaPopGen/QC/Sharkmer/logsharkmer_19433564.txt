@@ -1,0 +1,1 @@
+/var/spool/slurmd/job19433564/slurm_script: line 22: snakemake: command not found
