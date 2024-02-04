@@ -1,0 +1,79 @@
+>Feature Contig01+32881051
+2781	2110	gene
+			gene	dpo
+2781	2110	CDS
+			product	DNA polymerase
+2760	2820	gene
+			gene	trnP(tgg)
+2760	2820	tRNA
+			product	tRNA-PRO
+3060	3126	gene
+			gene	trnC(gca)
+3060	3126	tRNA
+			product	tRNA-CYS
+5094	3389	gene
+5094	3389	rRNA
+			product	l-rRNA
+6832	5264	gene
+			gene	cox1
+6832	5264	CDS
+			product	cytochrome c oxidase subunit 1
+6905	7574	gene
+			gene	cox2
+6905	7574	CDS
+			product	cytochrome c oxidase subunit 2
+7659	7728	gene
+			gene	trnW(tca)
+7659	7728	tRNA
+			product	tRNA-TRP
+7772	7936	gene
+			gene	atp8
+7772	7936	CDS
+			product	ATP synthase F0 subunit 8
+8008	8643	gene
+			gene	atp6
+8008	8643	CDS
+			product	ATP synthase F0 subunit 6
+8643	9428	gene
+			gene	cox3
+8643	9428	CDS
+			product	cytochrome c oxidase subunit 3
+9434	9504	gene
+			gene	trnM(cat)
+9434	9504	tRNA
+			product	tRNA-MET
+9849	10826	gene
+			gene	nad2
+9849	10826	CDS
+			product	NADH dehydrogenase subunit 2
+10963	12645	gene
+			gene	nad5
+10963	12645	CDS
+			product	NADH dehydrogenase subunit 5
+12644	13608	gene
+12644	13608	rRNA
+			product	s-rRNA
+13716	14210	gene
+			gene	nad6
+13716	14210	CDS
+			product	NADH dehydrogenase subunit 6
+14173	14523	gene
+			gene	nad3
+14173	14523	CDS
+			product	NADH dehydrogenase subunit 3
+14514	14816	gene
+			gene	nad4l
+14514	14816	CDS
+			product	NADH dehydrogenase subunit 4L
+14860	15789	gene
+			gene	nad1
+14860	15789	CDS
+			product	NADH dehydrogenase subunit 1
+15789	17121	gene
+			gene	nad4
+15789	17121	CDS
+			product	NADH dehydrogenase subunit 4
+17234	18370	gene
+			gene	cob
+17234	18370	CDS
+			product	cytochrome b
