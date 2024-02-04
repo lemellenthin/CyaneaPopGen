@@ -1,0 +1,68 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.4 (Dec 2020)
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         /data/db/data_managers/mitos/refseq89m/ncRNA/trnS2.cm
+# target sequence database:              outdir//sequence.fas-0
+# CM configuration:                      glocal
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.1
+# Max sensitivity mode:                  on [all heuristic filters off]
+# maximum DP search matrix size:         80000.0 Mb
+# truncated hit detection:               off [due to --max]
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnS2  [CLEN=70]
+Hit scores:
+ rank     E-value  score  bias  sequence            start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  ------------------ ------ ------   --- ----- ----  -----------
+  (1) !   1.3e-07   52.5   0.0  Contig01+222966312   7590   7659 +  cm    no 0.34  -
+  (2) !   4.5e-06   43.3   0.0  Contig01+222966312   9365   9435 +  cm    no 0.35  -
+
+
+Hit alignments:
+>> Contig01+222966312  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (1) !   1.3e-07   52.5   0.0  cm        1       70 []        7590        7659 + ..   52.4    no 0.34
+
+                                                    v           v                                NC
+                          (((((((,,<<<<______>>>>,<<<<<_______>>>>>,,,,<<<<<_______>>>>>))))))): CS
+               trnS2    1 aaguAauUAgCuuguGgUaaaGcauuUGuCUUGAAAaCAaaauAuggggGUUCgAuUCccccauUacuuU 70  
+                          ::G:A:UUA: UU   G AAA :A:U G:CUU AAA:C A:++AU:::GGUUC+A+UCC:::A:U:C::+
+  Contig01+222966312 7590 GGGGAGUUAAGUUAAUGAAAACUAAUUGCCUUCAAAGCUAUUAAUAUUGGUUCAAAUCCAAUACUCCCUG 7659
+
+>> Contig01+222966312  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (2) !   4.5e-06   43.3   0.0  cm        1       70 []        9365        9435 + ..   43.1    no 0.35
+
+                                                                                                  NC
+                          (((((((,,<<<<.______>>>>,<<<<<_______>>>>>,,,,<<<<<_______>>>>>))))))): CS
+               trnS2    1 aaguAauUAgCuu.guGgUaaaGcauuUGuCUUGAAAaCAaaauAuggggGUUCgAuUCccccauUacuuU 70  
+                          A:::A::UA: :U ++GG AA: :AU: G:CU   AA:C :AAUA+G::GGUUCGA UCC::C::U:::U 
+  Contig01+222966312 9365 AGUAAGAUAAACUaUGGGAAAGUUAUCAGACUCAUAAUCUGAAUAAGAGGGUUCGACUCCUUCUCUUACUA 9435
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (70 consensus positions)
+Target sequences:                                                1  (40168 residues searched)
+Target sequences re-searched for truncated hits:                 0  (0 residues re-searched)
+Windows   passing  local HMM SSV           filter:                  (off)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:                  (off)
+Windows   passing  local HMM Forward  bias filter:                  (off)
+Windows   passing glocal HMM Forward       filter:                  (off)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:                  (off)
+Envelopes passing glocal CM  CYK           filter:                  (off)
+Total CM hits reported:                                          2  (0.00351); includes 0 truncated hit(s)
+
+# CPU time: 33.48u 0.01s 00:00:33.48 Elapsed: 00:00:33.48
+//
+[ok]

@@ -1,0 +1,141 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.4 (Dec 2020)
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         /data/db/data_managers/mitos/refseq89m/ncRNA/trnS1.cm
+# target sequence database:              outdir//sequence.fas-0
+# CM configuration:                      glocal
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.1
+# Max sensitivity mode:                  on [all heuristic filters off]
+# maximum DP search matrix size:         80000.0 Mb
+# truncated hit detection:               off [due to --max]
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnS1  [CLEN=67]
+Hit scores:
+ rank     E-value  score  bias  sequence            start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  ------------------ ------ ------   --- ----- ----  -----------
+  (1) !   0.00055   26.8   0.0  Contig01+222966312   7590   7659 +  cm    no 0.34  -
+  (2) !    0.0014   24.4   0.0  Contig01+222966312   9365   9435 +  cm    no 0.35  -
+ ------ inclusion threshold ------
+  (3) ?     0.043   15.5   0.0  Contig01+222966312    261    187 -  cm    no 0.39  -
+  (4) ?     0.043   15.5   0.0  Contig01+222966312    915    841 -  cm    no 0.39  -
+  (5) ?     0.043   15.5   0.0  Contig01+222966312   1569   1495 -  cm    no 0.39  -
+  (6) ?     0.043   15.5   0.0  Contig01+222966312  18516  18590 +  cm    no 0.39  -
+  (7) ?     0.043   15.5   0.0  Contig01+222966312  19170  19244 +  cm    no 0.39  -
+  (8) ?     0.043   15.5   0.0  Contig01+222966312  19824  19898 +  cm    no 0.39  -
+
+
+Hit alignments:
+>> Contig01+222966312  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (1) !   0.00055   26.8   0.0  cm        1       67 []        7590        7659 + ..   26.3    no 0.34
+
+                                                    v           v                                  NC
+                          (((((((,,<<<.....___>>>,<<<<<_______>>>>>,,,,<<<<<_________>>>>>))))))): CS
+               trnS1    1 GAgaaAguaucu.....aAaagaaaaaagCUGCUAAcuuuuuuuuccgcGGUUuAAaUCCgcggcUuucUCu 67  
+                          ::G:A::UA  U     AAAA  AA: ::CU C AA:: :UU  U::::G UU AAAU C::::::U:C::+
+  Contig01+222966312 7590 GGGGAGUUAAGUuaaugAAAACUAAUUGCCUUCAAAGCUAUUAAUAUUGG-UUCAAAU-CCAAUACUCCCUG 7659
+
+>> Contig01+222966312  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (2) !    0.0014   24.4   0.0  cm        1       67 []        9365        9435 + ..   23.2    no 0.35
+
+                                                                                                      NC
+                          (((((((,,<<<......___>>>,<<<<<__.._____>>>>>,,,,<<<<<_________>>>>>))))))): CS
+               trnS1    1 GAgaaAguaucu......aAaagaaaaaagCU..GCUAAcuuuuuuuuccgcGGUUuAAaUCCgcggcUuucUCu 67  
+                          :::AA::UA         AAA   A::A::CU    UAA::U:: U +::::G UU  A+U C::::::UU::: 
+  Contig01+222966312 9365 AGUAAGAUAAACuaugggAAAGUUAUCAGACUca--UAAUCUGAAUAAGAGGG-UUCGACU-CCUUCUCUUACUA 9435
+
+>> Contig01+222966312  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (3) ?     0.043   15.5   0.0  cm        1       67 []         261         187 - ..   12.7    no 0.39
+
+                             v                      v           v       v  v            v  v   v      NC
+                         (((((((,,<<<......___>>>,<<<<<_______>>>>>,,,,<<<<<__..._______>>>>>))))))): CS
+               trnS1   1 GAgaaAguaucu......aAaagaaaaaagCUGCUAAcuuuuuuuuccgcGGU...UuAAaUCCgcggcUuucUCu 67 
+                         :::A : ++U:U      +A A:A A:  :CUGCUAA:  :UU ++: G:  U     AA+ C :C : : U:::+
+  Contig01+222966312 261 AUAAUUGGUUGUguaccaUA-AAAGACUUUCUGCUAAAACGUUACAGAGGAAUccuACAACCCCCCCCUAUUUAUG 187
+
+>> Contig01+222966312  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (4) ?     0.043   15.5   0.0  cm        1       67 []         915         841 - ..   12.7    no 0.39
+
+                             v                      v           v       v  v            v  v   v      NC
+                         (((((((,,<<<......___>>>,<<<<<_______>>>>>,,,,<<<<<__..._______>>>>>))))))): CS
+               trnS1   1 GAgaaAguaucu......aAaagaaaaaagCUGCUAAcuuuuuuuuccgcGGU...UuAAaUCCgcggcUuucUCu 67 
+                         :::A : ++U:U      +A A:A A:  :CUGCUAA:  :UU ++: G:  U     AA+ C :C : : U:::+
+  Contig01+222966312 915 AUAAUUGGUUGUguaccaUA-AAAGACUUUCUGCUAAAACGUUACAGAGGAAUccuACAACCCCCCCCUAUUUAUG 841
+
+>> Contig01+222966312  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (5) ?     0.043   15.5   0.0  cm        1       67 []        1569        1495 - ..   12.7    no 0.39
+
+                              v                      v           v       v  v            v  v   v      NC
+                          (((((((,,<<<......___>>>,<<<<<_______>>>>>,,,,<<<<<__..._______>>>>>))))))): CS
+               trnS1    1 GAgaaAguaucu......aAaagaaaaaagCUGCUAAcuuuuuuuuccgcGGU...UuAAaUCCgcggcUuucUCu 67  
+                          :::A : ++U:U      +A A:A A:  :CUGCUAA:  :UU ++: G:  U     AA+ C :C : : U:::+
+  Contig01+222966312 1569 AUAAUUGGUUGUguaccaUA-AAAGACUUUCUGCUAAAACGUUACAGAGGAAUccuACAACCCCCCCCUAUUUAUG 1495
+
+>> Contig01+222966312  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (6) ?     0.043   15.5   0.0  cm        1       67 []       18516       18590 + ..   12.7    no 0.39
+
+                               v                      v           v       v  v            v  v   v      NC
+                           (((((((,,<<<......___>>>,<<<<<_______>>>>>,,,,<<<<<__..._______>>>>>))))))): CS
+               trnS1     1 GAgaaAguaucu......aAaagaaaaaagCUGCUAAcuuuuuuuuccgcGGU...UuAAaUCCgcggcUuucUCu 67   
+                           :::A : ++U:U      +A A:A A:  :CUGCUAA:  :UU ++: G:  U     AA+ C :C : : U:::+
+  Contig01+222966312 18516 AUAAUUGGUUGUguaccaUA-AAAGACUUUCUGCUAAAACGUUACAGAGGAAUccuACAACCCCCCCCUAUUUAUG 18590
+
+>> Contig01+222966312  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (7) ?     0.043   15.5   0.0  cm        1       67 []       19170       19244 + ..   12.7    no 0.39
+
+                               v                      v           v       v  v            v  v   v      NC
+                           (((((((,,<<<......___>>>,<<<<<_______>>>>>,,,,<<<<<__..._______>>>>>))))))): CS
+               trnS1     1 GAgaaAguaucu......aAaagaaaaaagCUGCUAAcuuuuuuuuccgcGGU...UuAAaUCCgcggcUuucUCu 67   
+                           :::A : ++U:U      +A A:A A:  :CUGCUAA:  :UU ++: G:  U     AA+ C :C : : U:::+
+  Contig01+222966312 19170 AUAAUUGGUUGUguaccaUA-AAAGACUUUCUGCUAAAACGUUACAGAGGAAUccuACAACCCCCCCCUAUUUAUG 19244
+
+>> Contig01+222966312  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (8) ?     0.043   15.5   0.0  cm        1       67 []       19824       19898 + ..   12.7    no 0.39
+
+                               v                      v           v       v  v            v  v   v      NC
+                           (((((((,,<<<......___>>>,<<<<<_______>>>>>,,,,<<<<<__..._______>>>>>))))))): CS
+               trnS1     1 GAgaaAguaucu......aAaagaaaaaagCUGCUAAcuuuuuuuuccgcGGU...UuAAaUCCgcggcUuucUCu 67   
+                           :::A : ++U:U      +A A:A A:  :CUGCUAA:  :UU ++: G:  U     AA+ C :C : : U:::+
+  Contig01+222966312 19824 AUAAUUGGUUGUguaccaUA-AAAGACUUUCUGCUAAAACGUUACAGAGGAAUccuACAACCCCCCCCUAUUUAUG 19898
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (67 consensus positions)
+Target sequences:                                                1  (40168 residues searched)
+Target sequences re-searched for truncated hits:                 0  (0 residues re-searched)
+Windows   passing  local HMM SSV           filter:                  (off)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:                  (off)
+Windows   passing  local HMM Forward  bias filter:                  (off)
+Windows   passing glocal HMM Forward       filter:                  (off)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:                  (off)
+Envelopes passing glocal CM  CYK           filter:                  (off)
+Total CM hits reported:                                          8  (0.01471); includes 0 truncated hit(s)
+
+# CPU time: 32.44u 0.01s 00:00:32.44 Elapsed: 00:00:32.45
+//
+[ok]
