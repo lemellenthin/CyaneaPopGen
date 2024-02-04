@@ -1,139 +1,19 @@
 Project:
 -----------------------
-Project name          = MitochondrialGenomeAssembly2024Feb1
+Project name          = CyaneaFulva324-MitochondrialGenomeAssembly2024Feb2
 Type                  = mito
 Genome Range          = 12000-22000
-K-mer                 = 33
+K-mer                 = 21
 Max memory            = 
 Extended log          = 1
 Save assembled reads  = yes
 Seed Input            = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/Mitochondria/data/seeds/CyCapCOI.fa
 Extend seed directly  = no
-Reference sequence    = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/Mitochondria/data/CyaneaCapillataPartialMito.fa 
+Reference sequence    = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/Mitochondria/data/CyaneaCapillata/CyaneaCapillataPartialMito.fa 
 Variance detection    = no
 Chloroplast sequence  = 
 
 Dataset 1:
------------------------
-Read Length           = 151
-Insert size           = 300
-Platform              = illumina
-Single/Paired         = PE
-Combined reads        = 
-Forward reads         = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaCapillataLEM1/CyaneaCapillataLEM1_R1.fastq.gz
-Reverse reads         = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaCapillataLEM1/CyaneaCapillataLEM1_R2.fastq.gz
-Store Hash            =
-
-Heteroplasmy:
------------------------
-MAF                   = 
-HP exclude list       = 
-PCR-free              = 
-
-Optional:
------------------------
-Insert size auto      = yes
-Use Quality Scores    = yes
-Reduce ambigious N's  = 
-Output path           = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/Mitochondria/output/CyCapLEM1/
-
-Dataset 2:
------------------------
-Read Length           = 151
-Insert size           = 300
-Platform              = illumina
-Single/Paired         = PE
-Combined reads        = 
-Forward reads         = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaCapillataLEM2/CyaneaCapillataLEM2_R1.fastq.gz
-Reverse reads         = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaCapillataLEM2/CyaneaCapillataLEM2_R2.fastq.gz
-Store Hash            =
-
-Heteroplasmy:
------------------------
-MAF                   = 
-HP exclude list       = 
-PCR-free              = 
-
-Optional:
------------------------
-Insert size auto      = yes
-Use Quality Scores    = yes
-Reduce ambigious N's  = 
-Output path           = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/Mitochondria/output/CyCapLEM2/
-
-Dataset 3:
------------------------
-Read Length           = 151
-Insert size           = 300
-Platform              = illumina
-Single/Paired         = PE
-Combined reads        = 
-Forward reads         = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaCapillataLEM6/CyaneaCapillataLEM6_R1.fastq.gz
-Reverse reads         = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaCapillataLEM6/CyaneaCapillataLEM6_R2.fastq.gz
-Store Hash            =
-
-Heteroplasmy:
------------------------
-MAF                   = 
-HP exclude list       = 
-PCR-free              = 
-
-Optional:
------------------------
-Insert size auto      = yes
-Use Quality Scores    = yes
-Reduce ambigious N's  = 
-Output path           = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/Mitochondria/output/CyCapLEM6/
-
-Dataset 4:
------------------------
-Read Length           = 151
-Insert size           = 300
-Platform              = illumina
-Single/Paired         = PE
-Combined reads        = 
-Forward reads         = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaCapillataLM137/CyaneaCapillataLM137_R1.fastq.gz
-Reverse reads         = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaCapillataLM137/CyaneaCapillataLM137_R2.fastq.gz
-Store Hash            =
-
-Heteroplasmy:
------------------------
-MAF                   = 
-HP exclude list       = 
-PCR-free              = 
-
-Optional:
------------------------
-Insert size auto      = yes
-Use Quality Scores    = yes
-Reduce ambigious N's  = 
-Output path           = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/Mitochondria/output/CyCapLM137/
-
-Dataset 5:
------------------------
-Read Length           = 151
-Insert size           = 300
-Platform              = illumina
-Single/Paired         = PE
-Combined reads        = 
-Forward reads         = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaFulvaLMD324/CyaneaFulvaLMD324_R1.fastq.gz
-Reverse reads         = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/RawReads/CyaneaFulvaLMD324/CyaneaFulvaLMD324_R2.fastq.gz
-Store Hash            =
-
-Heteroplasmy:
------------------------
-MAF                   = 
-HP exclude list       = 
-PCR-free              = 
-
-Optional:
------------------------
-Insert size auto      = yes
-Use Quality Scores    = yes
-Reduce ambigious N's  = 
-Output path           = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/Mitochondria/output/CyFulLMD324/
-
-Dataset 6:
 -----------------------
 Read Length           = 151
 Insert size           = 300
@@ -155,4 +35,4 @@ Optional:
 Insert size auto      = yes
 Use Quality Scores    = yes
 Reduce ambigious N's  = 
-Output path           = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/Mitochondria/output/CyFulLMD524/
+Output path           = /gpfs/gibbs/project/dunn/lem79/Chap3/CyaneaPopGen/Mitochondria/novoplasty/output/CyFulLMD524/
