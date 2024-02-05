@@ -1,0 +1,15 @@
+GenomeScope version 2.0
+input file = output/ChrysaoraLMD429_k21.histo
+output directory = ChrysaoraLMD429_k21
+p = 2
+k = 21
+name prefix = ChrysaoraLMD429_k21
+
+property                      min               max               
+Homozygous (aa)               97.3375%          97.396%           
+Heterozygous (ab)             2.60395%          2.66248%          
+Genome Haploid Length         213,732,432 bp    214,879,073 bp    
+Genome Repeat Length          87,733,424 bp     88,204,101 bp     
+Genome Unique Length          125,999,007 bp    126,674,972 bp    
+Model Fit                     66.7959%          98.1784%          
+Read Error Rate               0.402473%         0.402473%         

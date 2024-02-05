@@ -1,0 +1,15 @@
+GenomeScope version 2.0
+input file = output/AureliaLEM1529_k21.histo
+output directory = AureliaLEM1529_k21
+p = 2
+k = 21
+name prefix = AureliaLEM1529_k21
+
+property                      min               max               
+Homozygous (aa)               80.6947%          99.4174%          
+Heterozygous (ab)             0.58264%          19.3053%          
+Genome Haploid Length         232,479,039 bp    236,757,983 bp    
+Genome Repeat Length          140,316,652 bp    142,899,280 bp    
+Genome Unique Length          92,162,388 bp     93,858,702 bp     
+Model Fit                     41.5122%          85.5757%          
+Read Error Rate               1.55902%          1.55902%          

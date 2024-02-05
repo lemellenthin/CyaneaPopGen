@@ -1,0 +1,15 @@
+GenomeScope version 2.0
+input file = output/ChrysaoraLM138_k21.histo
+output directory = ChrysaoraLM138_k21
+p = 2
+k = 21
+name prefix = ChrysaoraLM138_k21
+
+property                      min               max               
+Homozygous (aa)               96.6752%          96.7192%          
+Heterozygous (ab)             3.28077%          3.32483%          
+Genome Haploid Length         243,275,724 bp    244,328,944 bp    
+Genome Repeat Length          90,644,691 bp     91,037,121 bp     
+Genome Unique Length          152,631,033 bp    153,291,822 bp    
+Model Fit                     71.4699%          97.8813%          
+Read Error Rate               0.225099%         0.225099%         
